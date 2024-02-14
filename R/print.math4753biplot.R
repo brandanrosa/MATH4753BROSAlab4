@@ -9,8 +9,6 @@
 #' @importFrom ggplot2 ggplot aes geom_histogram labs
 #' @importFrom rlang .data
 #'
-#'
-#'
 #' @examples
 #' \dontrun{print.math4753biplot(x = mpg)}
 #' @export
