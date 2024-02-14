@@ -12,13 +12,14 @@
 #'
 #' @examples
 #' \dontrun{summarymath4753biplot(x = mpg)}
-#' @export
 summary.math4753biplot <- function(x, ...){
+  x <- NULL
+  inout <- NULL
 
   df <- data.frame(x = x$x, inout = x$y)
 
-  s <- df %>%
-    group_by(.data$inout) %>%
+  s <- df |>
+    group_by(.data$inout) |>
     summarize(mean = mean(x), median = median(x), IQR = IQR(x), n = n())
 
   print(s)

@@ -11,12 +11,12 @@
 #'
 #' @examples
 #' \dontrun{print.math4753biplot(x = mpg)}
-#' @export
 print.math4753biplot <- function(x, ...){
+  inout <- NULL
 
-  df <- data.frame( x = x$x, inout = x$y, ...)
+  df <- data.frame(x = x$x, inout = x$y, ...)
 
-  p <- df %>%
+  p <- df |>
     ggplot(aes(x = x, fill = inout)) +
     geom_histogram(binwidth = 0.4) +
     labs(title = paste0("Biplot,", " k=", x$k))
