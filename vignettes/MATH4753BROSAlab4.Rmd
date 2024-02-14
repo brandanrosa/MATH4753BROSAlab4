@@ -1,0 +1,58 @@
+---
+title: "MATH4753BROSAlab4"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MATH4753BROSAlab4}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753BROSAlab4)
+```
+
+# Introduction
+
+This package contains three functions which do the following tasks. First "mybiplot" takes a numeric vector ($x$) and a user-chosen standard deviation ($k$), compares each value from the vector to the mean, and assigns each data point one of the following: "in", "outu", "outl". For those values who fall within $k$ standard deviations of the mean, "in" is assigned. If the data point is greater than $k$, "outu" is assigned, and otherwise "outl" is assigned. These values are stored in another vector. After the sd assignments are made, a histogram of the values is produced via the "print.math4753biplot" function. Finally a summary function ties everything in by producing the mean, median, and IQR grouped by their labeling from the first function with "summary.math4753biplot". We will investigate this package using the MPG variable from the EPAGAS data set at values of $k = 1$, $k = 2$, and $k = 3$. We will also need to utilize the "ggplot2" and "dplyr" packages.
+
+```{r}
+mpg <- epa$MPG
+```
+
+
+# Examples
+
+## $k=1$
+
+```{r}
+a <- mybiplot(x = mpg, k=1)
+print(a)
+```
+
+## $k=2$
+
+```{r}
+b <- mybiplot(x = mpg, k = 2)
+print(b)
+```
+
+## $k = 3$
+
+```{r}
+c <- mybiplot(x = mpg, k = 3)
+print(c)
+```
+
+
+
+
+
+
+
