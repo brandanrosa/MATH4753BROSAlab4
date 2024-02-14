@@ -16,3 +16,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/brandanrosa/MATH4753BROSAlab4
+BugReports: https://github.com/brandanrosa/MATH4753BROSAlab4/issues
