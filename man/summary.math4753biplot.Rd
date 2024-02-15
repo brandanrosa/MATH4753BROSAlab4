@@ -4,10 +4,10 @@
 \alias{summary.math4753biplot}
 \title{summary.math4753biplot}
 \usage{
-\method{summary}{math4753biplot}(x, ...)
+\method{summary}{math4753biplot}(object, ...)
 }
 \arguments{
-\item{x}{a numeric vector}
+\item{object}{a numeric vector}
 
 \item{...}{additional options}
 }

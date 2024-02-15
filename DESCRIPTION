@@ -5,7 +5,6 @@ Version: 0.1.0
 Author: Brandan Rosa
 Maintainer: Brandan Rosa <brandanrosa22@gmail.com>
 Description: This package uses three S3 methods (functions) to print a histogram and give a summary of the data..
-Imports: ggplot2, dplyr, rlang
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -15,6 +14,10 @@ Depends:
 Suggests: 
     knitr,
     rmarkdown
+Imports:
+    ggplot2,
+    dplyr,
+    rlang
 VignetteBuilder: knitr
 URL: https://github.com/brandanrosa/MATH4753BROSAlab4
 BugReports: https://github.com/brandanrosa/MATH4753BROSAlab4/issues
