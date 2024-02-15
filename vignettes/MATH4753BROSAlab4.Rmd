@@ -77,55 +77,8 @@ print(c)
 
 ✔  checking for detritus in the temp directory (519ms)
    
-   
 ── R CMD check results ──────── MATH4753BROSAlab4 0.1.0 ────
 Duration: 2m 57.9s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

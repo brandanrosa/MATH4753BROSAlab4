@@ -20,8 +20,8 @@ summary.math4753biplot <- function(object, ...){
   df <- data.frame(x = x$x, inout = x$y)
 
   s <- df %>%
-    group_by(.data$inout) %>%
-    summarize(mean = mean(x), median = median(x), IQR = IQR(x), n = n())
+    group_by(.data[[inout]]) %>%
+    summarize(mean = mean(.data[[x]]), median = median(.data[[x]]), IQR = IQR(.data[[x]]), n = n())
 
   print(s)
 }

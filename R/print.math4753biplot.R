@@ -24,6 +24,7 @@ print.math4753biplot <- function(x, ...){
     labs(title = paste0("Biplot,", " k=", x$k))
 
   print(p)
-  NextMethod(summary, df)
 }
+
+
 

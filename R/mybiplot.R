@@ -40,4 +40,3 @@ mybiplot <- function(x = double(), k = double()){
   l <- list(x = x, y = inout, k = k)
   structure(.Data =l, class = "math4753biplot")
 }
-
