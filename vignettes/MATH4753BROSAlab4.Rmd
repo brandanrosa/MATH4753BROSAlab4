@@ -24,7 +24,11 @@ library(MATH4753BROSAlab4)
 
 # Introduction
 
-This package contains three functions which do the following tasks. First "mybiplot" takes a numeric vector ($x$) and a user-chosen standard deviation ($k$), compares each value from the vector to the mean, and assigns each data point one of the following: "in", "outu", "outl". For those values who fall within $k$ standard deviations of the mean, "in" is assigned. If the data point is greater than $k$, "outu" is assigned, and otherwise "outl" is assigned. These values are stored in another vector. After the sd assignments are made, a histogram of the values is produced via the "print.math4753biplot" function. Finally a summary function ties everything in by producing the mean, median, and IQR grouped by their labeling from the first function with "summary.math4753biplot". We will investigate this package using the MPG variable from the EPAGAS data set at values of $k = 1$, $k = 2$, and $k = 3$. We will also need to utilize the "ggplot2" and "dplyr" packages.
+This package contains an S3 function, "mybiplot", which takes a numeric vector ($x$) and a user-chosen standard deviation value ($k$), compares each value from $x$ to the mean of $x$, and assigns each data point one of the following: "in", "outu", "outl". For those values who fall within $k$ standard deviations of the mean, "in" is assigned. If the data point is greater than $k$, "outu" is assigned, and otherwise "outl" is assigned. These values are ultimately stored into the matrix "inout".
+
+The package also includes two S3 methods for the generics "print" and "summary" which have class "math4753biplot". The method "print.math4753biplot" produces a histogram (from ggplot2) which is colored according to the "inout" status of the data. The "summary.math4753biplot" method summarizes the data according to its "inout" status and produces the mean, median, and IQR.
+
+We will investigate this package using the EPAGAS data set for values of $k = 1$, $k = 2$, and $k = 3$ for the standard deviations.
 
 ```{r}
 mpg <- epa$MPG
@@ -32,53 +36,32 @@ mpg <- epa$MPG
 
 # Examples
 
-## $k=1$
+## For $k=1$
 
-```{r}
-a <- mybiplot(x = mpg, k=1)
+```{r, fig.align = "center", fig.width=8, fig.height=5}
+a <- mybiplot(x = mpg, k = 1)
+
 print(a)
+summary(a)
 ```
 
-## $k=2$
+## For $k=2$
 
-```{r}
+```{r, fig.align = "center", fig.width=8, fig.height=5}
 b <- mybiplot(x = mpg, k = 2)
+
 print(b)
+summary(b)
 ```
 
-## $k = 3$
+## For $k = 3$
 
-```{r}
+```{r, fig.align = "center", fig.width=8, fig.height=5}
 c <- mybiplot(x = mpg, k = 3)
+
 print(c)
+summary(c)
 ```
 
-# Last $10$ Lines of Check
-
-✔  checking for code/documentation mismatches (9.1s)
-
-✔  checking Rd \usage sections (10s)
-
-✔  checking Rd contents (1.3s)
-
-✔  checking for unstated dependencies in examples (1.1s)
-
-✔  checking contents of 'data' directory (420ms)
-
-✔  checking data for non-ASCII characters (1.1s)
-
-✔  checking LazyData
-
-✔  checking data for ASCII and uncompressed saves (1.2s)
-
-✔  checking examples (9.7s)
-
-✔  checking for non-standard things in the check directory (515ms)
-
-✔  checking for detritus in the temp directory (519ms)
-   
-── R CMD check results ──────── MATH4753BROSAlab4 0.1.0 ────
-Duration: 2m 57.9s
-
-0 errors ✔ | 0 warnings ✔ | 0 notes ✔
+We can see that as we choose larger values of $k$, the more data points are classified "in"; which of course makes perfect sense.
 
