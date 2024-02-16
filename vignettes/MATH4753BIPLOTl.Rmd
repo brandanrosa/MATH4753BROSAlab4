@@ -63,17 +63,3 @@ summary(c)
 
 We can see that as we choose larger values of $k$, the more data points are classified "in"; which of course makes perfect sense, statistically. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
