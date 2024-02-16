@@ -3,6 +3,8 @@
 S3method(print,math4753biplot)
 S3method(summary,math4753biplot)
 export(mybiplot)
+export(print.math4753biplot)
+export(summary.math4753biplot)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,group_by)
 importFrom(dplyr,n)

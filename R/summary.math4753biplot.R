@@ -17,10 +17,10 @@
 #' @examples
 #' \dontrun{summarymath4753biplot(x = mpg)}
 summary.math4753biplot <- function(object, ...){
-  x <- NULL
+  x <- object
   inout <- NULL
 
-  df <- data.frame(x = x$x, inout = x$y, ...)
+  df <- data.frame(x = x$x, inout = x$y)
 
   s <- df %>%
     group_by(inout) %>%
